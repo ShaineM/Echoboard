@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EchoBoard — Network SIEM</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Exo+2:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <span class="logo-icon">◈</span>
+      <span class="logo-text">Echo<strong>Board</strong></span>
+    </div>
+    <div class="header-meta">
+      <span class="status-dot"></span>
+      <span id="status-label">SCANNING</span>
+      <span class="timestamp" id="live-time"></span>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Stat Cards -->
+    <section class="stat-cards">
+      <div class="card">
+        <div class="card-label">TOTAL EVENTS</div>
+        <div class="card-value" id="total-events">—</div>
+      </div>
+      <div class="card card-warn">
+        <div class="card-label">ANOMALIES DETECTED</div>
+        <div class="card-value" id="anomaly-count">—</div>
+      </div>
+      <div class="card card-danger">
+        <div class="card-label">BLOCKED TRAFFIC</div>
+        <div class="card-value" id="blocked-count">—</div>
+      </div>
+      <div class="card">
+        <div class="card-label">TOP SOURCE IP</div>
+        <div class="card-value small" id="top-ip">—</div>
+      </div>
+    </section>
+
+    <!-- Charts Row -->
+    <section class="charts-row">
+      <div class="chart-box">
+        <div class="chart-title">Traffic by Protocol</div>
+        <canvas id="protoChart"></canvas>
+      </div>
+      <div class="chart-box">
+        <div class="chart-title">Top Source IPs</div>
+        <canvas id="ipChart"></canvas>
+      </div>
+      <div class="chart-box">
+        <div class="chart-title">Normal vs Anomalous</div>
+        <canvas id="anomalyChart"></canvas>
+      </div>
+    </section>
+
+    <!-- Anomaly Feed -->
+    <section class="feed-section">
+      <div class="feed-header">
+        <span class="feed-title">⚠ FLAGGED ANOMALIES</span>
+        <span class="feed-count" id="feed-count">Loading...</span>
+      </div>
+      <div class="feed-table-wrap">
+        <table class="feed-table">
+          <thead>
+            <tr>
+              <th>TIMESTAMP</th>
+              <th>SOURCE IP</th>
+              <th>DESTINATION</th>
+              <th>PORT</th>
+              <th>PROTO</th>
+              <th>BYTES</th>
+              <th>ACTION</th>
+              <th>SCORE</th>
+            </tr>
+          </thead>
+          <tbody id="anomaly-feed">
+            <tr><td colspan="8" class="loading-row">Loading anomalies...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="/static/js/main.js"></script>
+</body>
+</html>
