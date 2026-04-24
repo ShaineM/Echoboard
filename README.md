@@ -10,12 +10,12 @@ EchoBoard ingests firewall and network traffic logs, runs an Isolation Forest ma
 
 ## Features
 
-- **AI Anomaly Detection** — Uses scikit-learn's Isolation Forest to learn normal traffic patterns and flag outliers — no manual rules needed
-- **Network Log Parsing** — Ingests standard firewall/network log formats
-- **Live Dashboard** — Visual charts for protocol breakdown, top IPs, and normal vs anomalous traffic
-- **Anomaly Feed** — Scrollable table of flagged events with anomaly scores
-- **Lightweight** — Runs locally, no cloud dependency, no heavy stack required
-- **Open Source** — MIT licensed, built for learning and contribution
+- **AI Anomaly Detection** : Uses scikit-learn's Isolation Forest to learn normal traffic patterns and flag outliers : no manual rules needed
+- **Network Log Parsing** : Ingests standard firewall/network log formats
+- **Live Dashboard** : Visual charts for protocol breakdown, top IPs, and normal vs anomalous traffic
+- **Anomaly Feed** : Scrollable table of flagged events with anomaly scores
+- **Lightweight** : Runs locally, no cloud dependency, no heavy stack required
+- **Open Source** : MIT licensed, built for learning and contribution
 
 ---
 
@@ -130,4 +130,4 @@ EchoBoard is intended for **educational purposes and authorized network monitori
 
 ## License
 
-MIT — see [LICENSE](LICENSE)
+MIT : see [LICENSE](LICENSE)
